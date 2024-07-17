@@ -1,0 +1,177 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(66, 66, 66);
+}
+
+.box{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.box::before
+{
+    content: " ";
+    position: absolute;
+    top: 250px;
+    right: 200px;
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(0deg, transparent, rgb(1, 199, 225), rgb(1, 199, 225));
+    box-shadow: 10px 10px 5px rgb(1, 199, 225), -10px -10px 5px rgb(1, 199, 225);
+    transform-origin: top right;
+    animation: anim 5s linear infinite;
+}
+
+.box::after
+{
+    content: " ";
+    position: absolute;
+    top: -250px;
+    right: -200px;
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(180deg, transparent, rgb(1, 199, 225), rgb(1, 199, 225));
+    box-shadow: 10px 10px 5px rgb(1, 199, 225), -10px -10px 5px rgb(1, 199, 225);
+    transform-origin: bottom left;
+    animation: anim 5s linear infinite;
+}
+
+@keyframes anim{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    }
+
+
+
+.form{
+    position: absolute;
+    inset: 2px;
+    background-color: rgb(37, 37, 37);
+    font-family: 'Righteous', cursive;
+    z-index: 5;
+    opacity: 1;
+}
+
+.box .form h2{
+    text-align: center;
+    margin: 50px 0px 40px 0px;
+    color:rgb(1, 199, 225);
+    font-size: 50px;
+}
+
+.form input{
+    position: relative;
+    display: block;
+    width: 300px;
+    height: 35px;
+    margin: 0px auto;
+    padding: 0px 5px 0px 5px;
+    color: black;
+    font-size: 16px;
+    background-color: rgba(1, 199, 225, 0);
+    border: none;
+    outline: none;
+    z-index: 5;
+    
+}
+
+.form span{
+    font-size: 24px;
+    color: rgb(69, 69, 69);
+    position: relative;
+    bottom: 35px;
+    left: 55px;
+    transition-duration: 1s;
+}
+
+ .form i{
+    position: relative;
+    bottom: 35px;
+    display: block;
+    width: 300px;
+    height: 2px;
+    margin: 0px auto;
+    padding: 0px 5px 0px 5px;
+    background-color: rgb(1, 199, 225);
+    border: none;
+    transition-duration: 1s;
+    z-index: 4;
+}
+
+.form .username-input:focus ~ .back1,
+.form .username-input:valid ~ .back1{
+    bottom: 55px;
+    height: 35px;
+}
+
+.form .username-input:focus ~ .username,
+.form .username-input:valid ~ .username{
+    color:rgb(1, 199, 225);
+    bottom: 60px;
+    right: 10px;
+    font-size: 0.7em;
+}
+
+.form .password-input:focus ~ .back2,
+.form .password-input:valid ~ .back2{
+    bottom: 55px;
+    height: 35px;
+}
+
+.form .password-input:focus ~ .password,
+.form .password-input:valid ~ .password{
+    color:rgb(1, 199, 225);
+    bottom: 60px;
+    right: 10px;
+    font-size: 0.7em;
+}
+
+.footer{
+    position: relative;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0px auto;
+}
+
+.footer a{
+    text-decoration: none;
+    color: black;
+    transition-duration: 1s;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+    text-shadow: 1px 1px 5px rgb(1, 199, 225);
+}
+
+button{
+    display: block;
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    font-family: 'Righteous', cursive;
+    background: linear-gradient(45deg, rgb(0, 125, 142), rgb(0, 220, 249));
+}
+
+button:hover{
+background: linear-gradient(45deg, rgb(0, 220, 249), rgb(0, 125, 142)) ;
+}
